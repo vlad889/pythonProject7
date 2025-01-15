@@ -16,6 +16,7 @@ class MyWidget(QMainWindow):
         self.y = (631 - self.diameter)#не списано!!! это на случай переделки!
         self.nach = False
 
+    
     def nagad(self):
         self.nach = True
         self.pushButton.setVisible(False)
@@ -25,13 +26,9 @@ class MyWidget(QMainWindow):
     def paintEvent(self, event):
         if not self.nach:
             return
-
         painter = QPainter(self)
-
         painter.setBrush(QColor('yellow'))
-
         painter.drawEllipse(100, 100, self.x, self.x)
-
         painter.end()
 
 
